@@ -1,0 +1,38 @@
+version: '3.0'
+networks:
+  rasa:
+    name: rasa
+    external: true
+  rasa_default:
+    name: rasa_default
+services:
+  rasa:
+    image: rasa/rasa:3.4.4-full
+    ports:
+      - 5005:5005
+    volumes:
+      - ./:/app
+    command:  
+      - run  
+      - -m  
+      - models   
+      - --enable-api  
+      - --cors   
+      - "*"  
+      - --debug
+    expose:
+      - 5005
+    networks:
+      - rasa_default
+  rasa_action:
+    container_name: "action_server"
+    build: .
+    volumes:
+      - './:/app'
+    ports:            
+      - "5055:5055"
+    depends_on:
+      - rasa
+    networks:
+      - rasa
+      - rasa_default

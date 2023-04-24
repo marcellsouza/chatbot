@@ -1,0 +1,5 @@
+rasa
+requests
+beautifulsoup4
+rasa-sdk
+meilisearch

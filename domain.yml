@@ -1,0 +1,132 @@
+version: "3.1"
+entities:
+  - diario_numero
+  - servico_entity
+  - periodo_relatorio
+  - sessao_data
+intents:
+  - oi
+  - tchau
+  - ajuda
+  - obrigado
+  - falha
+  - nao
+  - sim
+  - servico
+  - servico_artigo
+  - paginar
+  - diario
+  - diario_numerado
+  - servico_tutorial
+  - relatorio
+  - gestao
+  - sobre_o_robo
+  - sobre_servicos
+  - sobre_diarios
+  - sobre_transparencia
+  - sobre_gestao
+  - sessao_tce
+
+responses:
+  utter_introducao:
+  - text: "Olá! Sou o assistente virtual do governo do Amapá."
+  utter_oi:
+  - text: "Olá! Como posso ajudar?"
+  utter_falha:
+  - text: "Desculpe. Pode me explicar melhor o seu problema?"
+  utter_ajuda:
+  - text: 'O que você precisa?'
+  utter_consulta:
+  - text: 'Um segundo'
+  utter_consegui_ajudar:
+  - text: "Consegui ajudar?"
+  utter_sucesso:
+  - text: "De nada! Mais alguma coisa?"
+  utter_despedida:
+  - text: "Tudo bem. Até mais!"
+  utter_pagina:
+  - text: "Aqui estão outros serviços relacionados:"
+  sou_um_robo:
+  - text: "Sou um robô treinado pra te ajudar."
+  utter_desconhecido:
+  - text: "Não consegui entender. Poderia escrever com outras palavras?"
+  utter_o_que_sei_fazer:
+  - text: "Consigo encontrar informações sobre serviços do governo, encontrar sessões do TCE, encontrar arquivos do portal transparência, encontrar diários do diário oficial"
+
+  utter_sobre_servicos:
+  - text: "Basta me perguntar sobre o serviço que quer realizar. 'Como tirar segunda via do RG?', 'como emitir uma certidão negativa de débito' e eu procuro pra você"
+
+  utter_sobre_diarios:
+  - text: "Basta pedir 'ultimos diarios' ou 'diario oficial' para receber os ultimos lançamentos do diario. Você também pode pesquisar uma edição específica dizendo algo como 'diario de 25 de janeiro de 2021' ou 'diario numero 650' e vou procurar o diario pra você"
+
+  utter_sobre_transparencia:
+    - text: "Posso encontrar documentos do transparência por identificadores. Pedidos como: 'balancete do tce do primeiro semestre' ou 'relatório de repasse de março de 2022', 'relatório do primeiro bimestre de 2022'"
+
+  utter_sobre_gestao:
+    - text: "Posso encontrar as informações de uma pasta do governo pra você. Basta pedir usando o nome como 'Universidade estadual do amapá' ou pela sigla 'UEAP'. Tenho informações sobre todas as pastas disponíveis"
+  utter_default:
+    - text: "Não entendi seu pedido. Pode usar outras palavras?"
+
+
+session_config:
+  session_expiration_time: 60
+  carry_over_slots_to_new_session: true
+
+slots:
+  servico_pedido:
+    type: text
+    influence_conversation: true
+    mappings:
+    - type: from_text
+      intent: servico
+      not_intent: excluded_intent
+
+  gestao_pedido:
+    type: text
+    influence_conversation: true
+    mappings:
+    - type: from_text
+      intent: gestao
+      not_intent: servico
+
+  diario_pedido:
+    type: text
+    influence_conversation: true
+    mappings:
+    - type: from_entity
+      intent: diario_numerado
+      entity: diario_numero
+
+  sessao_pedida:
+    type: text
+    influence_conversation: true
+    mappings:
+    - type: from_entity
+      intent: sessao_tce
+      entity: sessao_data
+
+  servico_slug:
+    type: text
+    influence_conversation: true
+    mappings:
+    - type: from_entity
+      intent: servico_artigo
+      entity: servico_entity
+
+  relatorio_pedido:
+    type: text
+    influence_conversation: true
+    mappings:
+    - type: from_entity
+      intent: relatorio
+      entity: periodo_relatorio
+
+actions:
+  - action_servico_busca
+  - action_diario_busca
+  - action_diarios_recentes
+  - action_servico_artigo
+  - action_servico_tutorial
+  - action_relatorio
+  - action_gestao_info
+  - action_sessao

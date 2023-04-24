@@ -1,0 +1,33 @@
+version: "3.1"
+
+rules:
+
+- rule: dizer tchau
+  steps:
+  - intent: tchau
+  - action: utter_despedida
+
+- rule: servico_tutorial
+  steps:
+  - intent: servico_tutorial
+  - action: action_servico_tutorial
+
+- rule: gestao_info
+  steps:
+  - intent: gestao
+  - action: action_gestao_info
+
+- rule: relatorio
+  steps:
+  - intent: relatorio
+  - action: action_relatorio
+
+- rule: sessao
+  steps:
+  - intent: sessao_tce
+  - action: action_sessao
+
+- rule: Pede pro o usuário tentar usar outras palavras quando o robô não tiver certeza do que fazer
+  steps:
+  - intent: nlu_fallback
+  - action: utter_desconhecido

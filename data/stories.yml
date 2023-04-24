@@ -1,0 +1,110 @@
+version: "3.1"
+
+stories:
+
+- story: servico
+  steps:
+  - intent: servico
+  - action: utter_consulta
+  - action: action_servico_busca
+  - intent: servico_artigo
+  - action: action_servico_artigo
+
+- story: diario
+  steps:
+  - intent: diario
+  - action: utter_consulta
+  - action: action_diarios_recentes
+
+- story: diario numerado
+  steps:
+  - intent: diario_numerado
+  - action: utter_consulta
+  - action: action_diario_busca
+
+- story: oi e introdução
+  steps:
+  - intent: oi
+  - action: utter_introducao
+  - action: utter_o_que_sei_fazer
+
+- story: ajuda
+  steps:
+  - intent: ajuda
+  - action: utter_ajuda
+  - intent: servico
+  - action: utter_consulta
+  - action: action_servico_busca
+
+- story: ajuda diario
+  steps:
+  - intent: ajuda
+  - action: utter_ajuda
+  - intent: diario
+  - action: utter_consulta
+  - action: action_diarios_recentes
+
+- story: ajuda diario numerado
+  steps:
+  - intent: ajuda
+  - action: utter_ajuda
+  - intent: diario_numerado
+  - action: utter_consulta
+  - action: action_diario_busca
+
+- story: encerrar atendimento
+  steps:
+  - intent: obrigado
+  - action: utter_sucesso
+  - intent: nao
+  - action: utter_despedida
+
+- story: renovar atendimento
+  steps:
+  - intent: obrigado
+  - action: utter_sucesso
+  - intent: sim
+  - action: utter_ajuda
+  - intent: servico
+  - action: utter_consulta
+  - action: action_servico_busca
+
+- story: reiniciar atendimento
+  steps:
+  - intent: obrigado
+  - action: utter_sucesso
+  - intent: sim
+  - action: utter_ajuda
+
+- story: falha atendimento
+  steps:
+  - intent: falha
+  - action: utter_falha
+  - intent: servico
+  - action: action_servico_busca
+
+- story: sobre o robo
+  steps:
+  - intent: sobre_o_robo
+  - action: utter_o_que_sei_fazer
+
+
+- story: sobre diarios
+  steps:
+  - intent: sobre_diarios
+  - action: utter_sobre_diarios
+
+- story: sobre transparencia
+  steps:
+  - intent: sobre_transparencia
+  - action: utter_sobre_transparencia
+
+- story: sobre servicos
+  steps:
+  - intent: sobre_servicos
+  - action: utter_sobre_servicos
+
+- story: sobre gestao
+  steps:
+  - intent: sobre_gestao
+  - action: utter_sobre_gestao

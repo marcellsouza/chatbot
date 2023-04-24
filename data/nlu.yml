@@ -1,0 +1,325 @@
+version: "3.1"
+
+nlu:
+- intent: oi
+  examples: |
+    - oi
+    - olá
+    - e ai
+    - bom dia
+    - boa tarde
+    - boa noite
+    - como vai?
+    - tudo bem?
+    - bora lá?
+    - ei
+    - tudo certo?
+
+- intent: ajuda
+  examples: |
+    - por favor me ajuda
+    - pode me ajudar?
+    - poderia me ajudar?
+    - me ajuda
+    - ajuda
+    - ajuda eu
+
+- intent: obrigado
+  examples: |
+    - valeu
+    - brigado
+    - obrigado
+    - obrigada
+    - brigado
+
+- intent: tchau
+  examples: |
+    - tchau
+    - ate mais
+    - até mais
+    - adeus
+    - valeu falou
+    - até mais
+
+- intent: sim
+  examples: |
+    - s
+    - sim
+    - claro
+    - com certeza
+    - concordo
+    - certo
+    - entendi
+    - deu certo
+    - funcionou
+    - consegui
+
+- intent: nao
+  examples: |
+    - n
+    - nao
+    - não
+    - nunca
+    - acho que não
+    - acho que nao
+    - quero não
+    - quero nao
+    - nao sei
+    - não sei
+
+- intent: servico
+  examples: |
+    - queria tirar
+    - como consigo
+    - onde faz
+    - como tira
+    - como faço
+    - aonde faz
+    - aonde consigo
+    - onde tirar
+    - onde tira
+    - aonde tirar
+    - como faz pra
+    - como paga
+    - como faz pra emitir
+    - como emite
+    - como consegue
+
+- intent: gestao
+  examples: |
+    - Vice-Governadoria - SEGOV
+    - Agência de Defesa e Inspeção Agropecuária do Amapá - DIAGRO
+    - Agência de Desenvolvimento Econômico do Amapá - AGEA
+    - Agência de Fomento do Amapá - AFAP
+    - Agência Reguladora de Serviços Públicos Delegados do Estado do Amapá
+    - Amapá Previdência - ARSAP
+    - Centro de Gestão da Tecnologia da informação - PRODAP
+    - Comando-Geral da Polícia Militar do Amapá - PM
+    - Companhia de Água e Esgoto do Amapá - CAESA
+    - Controladoria-Geral do Estado - CGE
+    - Corpo de Bombeiros Militar do Amapá
+    - Defensoria Pública Geral do Estado do Amapá - DEFENAP
+    - Delegacia-Geral de Polícia Civil
+    - Departamento Estadual de Trânsito - DETRAN
+    - Escola de Administração Pública - EAP
+    - Fundação da Criança e do Adolescente do Estado do Amapá - FCRIA
+    - Fundação de Amparo à Pesquisa do Estado do Amapá - FAPEAP
+    - Fundação Marabaixo - FEPPIR
+    - Fundação Saúde
+    - Gabinete Civil
+    - Gabinete de Segurança Institucional - GSI
+    - Instituto de Administração Penitenciaria do Amapá - IAPEN
+    - Instituto de Defesa do Consumidor - PROCON/AP
+    - Instituto de Desenvolvimento Rural do Estado do Amapá - RURAP
+    - Instituto de Hematologia e Hemoterapia do Amapá - HEMOAP
+    - Instituto de Pesos e Medidas do Estado do Amapá - IPEM
+    - Instituto de Pesquisas Científicas e Tecnológicas do Estado do Amapá - IEPA
+    - Instituto de Terras do Estado do Amapá - AMAPÁ TERRAS
+    - Junta Comercial do Amapá - JUCAP
+    - Laboratório Central de Saúde Pública - LACEN
+    - Polícia Científica - POLITEC
+    - Procuradoria-Geral do Estado - PGE-AP
+    - Rádio Difusora de Macapá - RDM
+    - Secretaria Colegiada dos Povos Indígenas
+    - Secretaria de Estado da Administração -  SEAD
+    - Secretaria de Estado da Ciência e Tecnologia - SETEC
+    - Secretaria de Estado da Comunicação - SECOM
+    - Secretaria de Estado da Cultura - SECULT
+    - Secretaria de Estado da Educação - SEED
+    - Secretaria de Estado da Fazenda - SEFAZ
+    - Secretaria de Estado da Habitação
+    - Secretaria de Estado da Infraestrutura - SEINF
+    - Secretaria de Estado da Justiça e Segurança Pública - SEGUP
+    - Secretaria de Estado da Saúde - SESA
+    - Secretaria de Estado de Assistência Social
+    - Secretaria de Estado de Mineração
+    - Secretaria de Estado de Pesca - PESCAP
+    - Secretaria de Estado de Políticas para Mulheres - SEPM
+    - Secretaria de Estado de Relações Internacionais e Comércio Exterior
+    - Secretaria de Estado de Transporte - SETRAP
+    - Secretaria de Estado de Transposição
+    - Secretaria de Estado do Bem-Estar Animal
+    - Secretaria de Estado do Desenvolvimento das Cidades - SDC
+    - Secretaria de Estado do Desenvolvimento Rural - SDR
+    - Secretaria de Estado do Desporto e Lazer - SEDEL
+    - Secretaria de Estado do Meio Ambiente - SEMA
+    - Secretaria de Estado do Planejamento - SEPLAN
+    - Secretaria de Estado do Trabalho e Empreendedorismo - SETE
+    - Secretaria de Estado do Turismo - SETUR
+    - Secretaria de Mobilização Social e Participação Popular
+    - Secretaria Extraordinária de Políticas para a Juventude - SEJUV
+    - Secretaria Extraordinária de Representação do Governo do Estado do Amapá em Brasília - SEAB
+    - Sistema Integrado do Atendimento ao Cidadão - SIAC
+    - Superintendência de Vigilância em Saúde - SVS
+    - Universidade do Estado do Amapá - UEAP
+    - SEGOV
+    - DIAGRO
+    - AGEA
+    - AFAP
+    - ARSAP
+    - PRODAP
+    - PM
+    - CAESA
+    - CGE
+    - DEFENAP
+    - DETRAN
+    - EAP
+    - FCRIA
+    - FAPEAP
+    - FEPPIR
+    - GSI
+    - IAPEN
+    - PROCON
+    - RURAP
+    - HEMOAP
+    - IPEM
+    - IEPA
+    - AMAPÁ TERRAS
+    - JUCAP
+    - LACEN
+    - POLITEC
+    - PGE
+    - RDM
+    - SEAD
+    - SETEC
+    - SECOM
+    - SECULT
+    - SEED
+    - SEFAZ
+    - SEINF
+    - SEGUP
+    - SESA
+    - PESCAP
+    - SEPM
+    - SETRAP
+    - SDC
+    - SDR
+    - SEDEL
+    - SEMA
+    - SEPLAN
+    - SETE
+    - SETUR
+    - SEJUV
+    - SEAB
+    - SIAC
+    - SVS
+    - UEAP
+
+- intent: diario
+  examples: |
+    - queria consultar o diario
+    - como consigo ter acesso aos diarios
+    - como faz pra ver o diario
+    - como ver o diario
+    - como ver o diario
+    - Diário Oficial
+    - diario oficial
+    - consultar o diario oficial do TCE
+    - ultimo diario do oficial
+    - diarios recentes
+    - ultimos diarios
+    - queria ver o ultimo diario oficial
+    - queria ver o diario
+
+- intent: diario_numerado
+  examples: |
+    - diario do dia [21 de feveireiro de 2023](diario_numero)
+    - diario oficial de [24 de março de 2022](diario_numero)
+    - diario oficial de [19 de abril de 2023](diario_numero)
+    - encontre o diario do dia [5 de outubro de 2020](diario_numero)
+    - ver diario de [14 de janeiro de 2019](diario_numero)
+    - ver diario de [25 de novembro](diario_numero)
+    - ver diario de [15 de dezembro](diario_numero)
+
+- intent: sessao_tce
+  examples: |
+    - sessao do tce do dia [21 de feveireiro de 2023](sessao_data)
+    - sessao do tce de [24 de março de 2022](sessao_data)
+    - pauta do tce de  [19 de abril de 2023](sessao_data)
+    - pauta do tce do dia  [24 de abril de 2023](sessao_data)
+    - ata do tce do dia  [5 de outubro de 2020](sessao_data)
+    - ver informações da sessao do tce de [14 de janeiro de 2019](sessao_data)
+    - dados da sessao do tce do dia [25 de novembro](sessao_data)
+    - dados da sessao do tce do dia [25 de novembro de 2023](sessao_data)
+    - dados da sessao do tce de [25 de novembro de 2023](sessao_data)
+    - sessao do tce do dia [15 de dezembro](sessao_data)
+    - sessao do tce do dia [15 de dezembro de 2023](sessao_data)
+    - qual a ata da sessão do tce de [15 de dezembro de 2023](sessao_data)
+    - sessão do dia [15 de dezembro de 2023](sessao_data)
+    - sessão de [15 de dezembro de 2023](sessao_data)
+    - sessão de [15 de dezembro](sessao_data)
+    - sessão do dia [15 de dezembro](sessao_data)
+    - tce sessao do dia [11 de janeiro de 2023](sessao_data)
+
+- intent: relatorio
+  examples: |
+    - relatorio de [gestao fiscal fevereiro de 2023](periodo_relatorio)
+    - queria o relatorio de [tipo relatorio de fevereiro de 2023](periodo_relatorio)
+    - relatorio [tipo relatorio primeiro semestre](periodo_relatorio)
+    - encontre o relatorio [tipo relatorio de janeiro de 2020](periodo_relatorio)
+    - relatorio [tipo relatorio de julho de 2021](periodo_relatorio)
+    - relatorio sobre o [balancete de julho de 2021](periodo_relatorio)
+    - queria ver o relatorio do [balancete julho de 2021](periodo_relatorio)
+    - queria ver o relatorio sobre o [quadro de detalhamento de julho de 2021](periodo_relatorio)
+
+- intent: falha
+  examples: |
+    - nao consegui
+    - não consegui
+    - nao era isso
+    - não era isso
+    - nao é isso
+    - não é isso
+    - não deu certo
+    - deu errado
+    - nao funcionou
+    - não funcionou
+    - nao ta funcionando
+    - não tá funcionando
+    - tá errado
+    - não funciona
+    - ta quebrado
+    - deu ruim
+
+- intent: sobre_o_robo
+  examples: |
+    - O que você sabe fazer?
+    - como você pode me ajudar?
+    - preciso de ajuda
+    - o que dá pra fazer?
+    - você consegue fazer o quê?
+    - o que o robô consegue fazer?
+
+- intent: sobre_servicos
+  examples: |
+    - o que seriam serviços?
+    - que serviços você oferece?
+    - quais sao os servicos do governo?
+    - o que você sabe sobre serviços?
+    - como funcionam os serviços?
+    - quais os serviços do governo?
+    - quais serviços você conhece?
+
+- intent: sobre_transparencia
+  examples: |
+    - como pesquisar no transparencia?
+    - você pode encontrar arquivos de transparência?
+    - você tem acesso ao transparência?
+
+- intent: sobre_gestao
+  examples: |
+    - Você sabe sobre a gestão do governo?
+    - você tem informações das pastas?
+    - como encontrar informações sobre a gestão?
+    - informações da gestão
+    - dados da gestão
+
+- intent: sobre_diarios
+  examples: |
+    - você tem acesso ao diario?
+    - informações do diario oficial
+    - como encontrar um diario
+    - como achar um diario
+    - tem como pesquisar diario por data?
+    - dá pra encontrar um diario pela data?
+    - você sabe encontrar uma edição do diario?
